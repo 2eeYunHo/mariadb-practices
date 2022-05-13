@@ -43,14 +43,14 @@ select *
     select *
    from dept_emp 
    where dept_no = 'd005'
-     or dept_no = 'd009'
+     or dept_no = 'd009';
      
 -- where 절 #4 : like 검색
 -- 예제 : 1989년에 입사한 직원의 이름, 성별, 입사일을 출력 
 select first_name as '이름', gender as '성 별', hire_date  as '입사일'
    from employees
    where hire_date <= '1989-12-31'
-   and = '1989-01-01' <= hire_date;
+   and '1989-01-01' <= hire_date;
 
 select first_name as '이름', gender as '성 별', hire_date  as '입사일'
    from employees

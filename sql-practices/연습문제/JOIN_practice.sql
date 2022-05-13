@@ -19,7 +19,7 @@ select a.emp_no, a.first_name, b.title, a.gender
 -- 두 테이블에 이름이 가은 공통 컬럼이 있으면 조인 조건을 명시하지 않아도 암묵적으로 조인이됨
 select a.emp_no, a.first_name, b.title
    from employees a natural join titles b -- natural은 기본적으로 두 DB에 같은이름의 테이블이 필히 존재하여야한다.
--- join 조건(n-1)개가 있어야함
+    -- join 조건(n-1)개가 있어야함
 	where b.to_date = '9999-01-01'; -- row 선택 조건
 -- ex2) join ~ using
 select count(*)

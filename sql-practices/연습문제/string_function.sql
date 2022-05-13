@@ -35,4 +35,4 @@ select emp_no, lpad(salary, 10, '*')
 select concat('---',ltrim('      Hello   '),'---'),
        concat('---',rtrim('      Hello   '),'---'),
        concat('---',trim('      Hello   '),'---'),
-       concat('---',trim(both'x' from     'Hello   '),'---')
+       concat('---',trim(both'x' from' Hello   '),'---');

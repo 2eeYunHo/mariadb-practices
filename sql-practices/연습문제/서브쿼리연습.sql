@@ -88,6 +88,13 @@ group by a.title
 order by avg(salary) asc
    limit 0, 1;
 
--- 3-2) 복수행 연산자:
-
+-- 3-2) 복수행 연산자: in, not in any, all 
+-- any의 사용법 : 1. =any : in과 동일하게 사용한다 | 2. >any : 최소,최대값 | 3. <>any : not in과 동일
+-- all의 사용법 : 1. =all : X 불가능 | 2. >=all, <all 모든인자와비교해 최대or최솟값 | <>all:
 -- 실습문제3: 현재 급여가 50000 이상인 직원의 이름과 급여를 출력하세요.(급여가 큰 순서대로)
+select a.salary as '급여', b.first_name as '이름'
+   from salaries a, employees b
+   where a.emp_no = b.emp_no
+   and a.to_date like '9999%'
+   and a.salary >= 50000
+   order by a.salary asc;

@@ -2,10 +2,21 @@
 
 -- 문제1.
 -- 현재 평균 연봉보다 많은 월급을 받는 직원은 몇 명이나 있습니까?
-
+select  count(salary)
+	from salaries
+    where to_date like '9999%'
+    and (salary >(select avg(salary) from salaries where to_date like '9999%'));
+    
 -- 문제2. 
 -- 현재, 각 부서별로 최고의 급여를 받는 사원의 사번, 이름, 부서 연봉을 조회하세요. 단 조회결과는 연봉의 내림차순으로 정렬되어 나타나야 합니다. 
-
+select a.emp_no, d.first_name, b.dept_no, a.salary
+	from salaries a, dept_emp b, employees d 
+	where a.emp_no = d.emp_no
+    and b.emp_no = a.emp_no
+    and a.to_date like '9999%'
+    and (select max(a.salary) from salaries a, dept_emp b where a.emp_no = b.emp_no
+    and a.to_date like '9999%' group by b.dept_no)
+    order by a.salary asc;
 -- 문제3.
 -- 현재, 자신의 부서 평균 급여보다 연봉(salary)이 많은 사원의 사번, 이름과 연봉을 조회하세요 
 

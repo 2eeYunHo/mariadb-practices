@@ -57,6 +57,9 @@ public class SelectTest01 {
 			System.out.println("드라이버 로딩 실패 : " + e);
 		} finally {
 			try {
+				if(rs != null) {
+					rs.close();
+				}
 				if (stmt != null) {
 					stmt.close();
 				}
@@ -64,7 +67,7 @@ public class SelectTest01 {
 					connection.close();
 				}
 			} catch (SQLException e) {
-				System.out.println("드라이버 로딩 실패 : " + e);
+				e.printStackTrace();
 			}
 		}
 		return result;

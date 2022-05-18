@@ -23,6 +23,6 @@
 
 	</dependencies>
 	<build>
-		<finalName>mariadb-practices</finalName>
+		<finalName>jdbc-practice</finalName>
 	</build>
 </project>

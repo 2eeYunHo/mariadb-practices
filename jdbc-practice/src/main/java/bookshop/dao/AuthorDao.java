@@ -33,7 +33,7 @@ public class AuthorDao {
 			// 4. SQL 실행
 			int count = pstmt.executeUpdate();
 			result = count == 1;
-			System.out.println(sql);
+		
 		} catch (ClassNotFoundException e) {
 			System.out.println("드라이버 로딩 실패:" + e);
 		} catch (SQLException e) {

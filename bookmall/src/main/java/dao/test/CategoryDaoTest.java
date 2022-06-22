@@ -12,32 +12,33 @@ public class CategoryDaoTest {
 	public static void main(String[] args) {
 		testInsert();
 	}
+
 	private static void testFindAll() {
 		List<CategoryVo> list = new CategoryDao().findAll();
-		for(CategoryVo vo : list)
+		for (CategoryVo vo : list)
 			System.out.println(vo);
 	}
-	
+
 	private static void testInsert() {
 		CategoryDao dao = new CategoryDao();
 		CategoryVo vo = new CategoryVo();
-		
+
 		vo.setName("판타지");
 		dao.insert(vo);
-		
+
 		vo.setName("IT");
 		dao.insert(vo);
-		
+
 		vo.setName("추리");
 		dao.insert(vo);
 	}
-	
+
 	private static void testDeleteAll() {
 		new CategoryDao().DeleteAll();
 	}
-	
+
 	private static void testAutoIncrementReset() {
 		new CategoryDao().autoIncrementReset();
 	}
-	
+
 }
